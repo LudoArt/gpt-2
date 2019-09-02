@@ -286,7 +286,7 @@ def main():
                         time=time.time() - start_time,
                         loss=v_loss,
                         avg=avg_loss[0] / avg_loss[1],
-                        ppl=np.exp(v_loss))
+                        ppl=np.exp(v_loss)))
 
                 counter += 1
         except KeyboardInterrupt:
