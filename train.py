@@ -280,12 +280,13 @@ def main():
                             avg_loss[1] * 0.99 + 1.0)
 
                 print(
-                    '[{counter} | {time:2.2f}] loss={loss:2.2f} avg={avg:2.2f}'
+                    '[{counter} | {time:2.2f}] loss={loss:2.2f} avg={avg:2.2f} ppl={ppl:2.2f}'
                     .format(
                         counter=counter,
                         time=time.time() - start_time,
                         loss=v_loss,
-                        avg=avg_loss[0] / avg_loss[1]))
+                        avg=avg_loss[0] / avg_loss[1]),
+                        ppl=np.exp(loss))
 
                 counter += 1
         except KeyboardInterrupt:
